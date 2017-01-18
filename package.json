@@ -1,0 +1,32 @@
+{
+  "name": "koa-boilerplate",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm run server",
+    "stop": "krampus 3000",
+    "server:dev": "npm run stop && npm run server",
+    "server": "ts-node server.ts",
+    "server:watch": "chokidar \"**/*.ts\" --initial -i \"node_modules\" -d 200 -c \"npm run server:dev --silent\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "2.0.0",
+    "koa-router": "7.1.0",
+    "reflect-metadata": "0.1.9"
+  },
+  "devDependencies": {
+    "@types/koa": "2.0.37",
+    "@types/koa-router": "7.0.21",
+    "@types/node": "7.0.0",
+    "ava": "0.17.0",
+    "chokidar-cli": "1.2.0",
+    "concurrently": "3.1.0",
+    "krampus": "1.1.0",
+    "ts-node": "2.0.0",
+    "typescript": "2.1.5"
+  }
+}
