@@ -5,10 +5,8 @@
   "description": "",
   "scripts": {
     "start": "npm run server",
-    "stop": "krampus 3000",
-    "server:dev": "npm run stop && npm run server",
     "server": "ts-node server.ts",
-    "server:watch": "chokidar \"**/*.ts\" --initial -i \"node_modules\" -d 200 -c \"npm run server:dev --silent\"",
+    "server:watch": "nodemon -w **/*.ts -x ts-node server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -23,9 +21,7 @@
     "@types/koa-router": "7.0.21",
     "@types/node": "7.0.0",
     "ava": "0.17.0",
-    "chokidar-cli": "1.2.0",
-    "concurrently": "3.1.0",
-    "krampus": "1.1.0",
+    "nodemon": "1.11.0",
     "ts-node": "2.0.0",
     "typescript": "2.1.5"
   }
