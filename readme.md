@@ -1,5 +1,8 @@
+DEBUG
+---
+1. `ts-node --inspect server`
+2. `devtool -r ts-node/register server`
+3. `npm run tsc:test && inspect node_modules/ava/profile.js lib/ping/pong.spec.js`
+
 TODO
 ---
-- Improve watch
-- Test
-- Debug

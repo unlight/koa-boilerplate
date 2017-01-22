@@ -1,6 +1,6 @@
-import * as Router from "koa-router";
+import * as Router from 'koa-router';
 
-async function pong(k: Router.IRouterContext, next) {
+export async function pong(k: Router.IRouterContext, next) {
 	k.body = await Promise.resolve({
 		date: new Date(),
 		result: `Pong`,
@@ -11,8 +11,9 @@ async function pong(k: Router.IRouterContext, next) {
 	next();
 }
 
-export const router = new Router()
+export const routes = new Router()
 	.prefix('/ping')
 	.post('/:pong', pong)
 	.get('/:pong', pong)
-	.get('/', pong);
+	.get('/', pong)
+	.routes()

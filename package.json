@@ -5,9 +5,13 @@
   "description": "",
   "scripts": {
     "start": "npm run server",
-    "server": "ts-node server.ts",
-    "server:watch": "nodemon -w **/*.ts -x ts-node server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rmlib": "rimraf lib",
+    "server": "ts-node server",
+    "server:inspect": "ts-node --inspect server",
+    "server:watch": "nodemon -w **/*.ts -x ts-node server",
+    "ava": "ava -v -s lib/**/*.spec.js",
+    "test": "npm run rmlib && npm run tsc:test && npm run ava",
+    "tsc:test": "tsc --project test.tsconfig.json --outDir lib"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +26,9 @@
     "@types/node": "7.0.0",
     "ava": "0.17.0",
     "nodemon": "1.11.0",
+    "rimraf": "2.5.4",
     "ts-node": "2.0.0",
+    "tslib": "1.5.0",
     "typescript": "2.1.5"
   }
 }
