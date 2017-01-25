@@ -8,7 +8,7 @@
     "rmlib": "rimraf lib",
     "server": "ts-node server",
     "server:inspect": "ts-node --inspect server",
-    "server:watch": "nodemon -w **/*.ts -x ts-node server",
+    "server:watch": "nodemon --no-colors -e ts,json --ignore lib --ignore *.spec.ts -x ts-node server",
     "ava": "ava -v -s lib/**/*.spec.js",
     "test": "npm run rmlib && npm run tsc:test && npm run ava",
     "tsc:test": "tsc --project test.tsconfig.json --outDir lib"
@@ -25,6 +25,7 @@
     "@types/koa-router": "7.0.21",
     "@types/node": "7.0.0",
     "ava": "0.17.0",
+    "koa-handle-error": "0.0.4",
     "nodemon": "1.11.0",
     "rimraf": "2.5.4",
     "ts-node": "2.0.0",

@@ -1,8 +1,6 @@
 import { test } from 'ava';
 import { pong } from './index';
 
-debugger;
-
 const next = () => { };
 const k: any = {};
 
