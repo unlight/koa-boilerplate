@@ -2,7 +2,7 @@
   "name": "koa-boilerplate",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "koa-boilerplate",
   "scripts": {
     "start": "npm run server",
     "rmlib": "rimraf lib",
@@ -11,23 +11,24 @@
     "server:watch": "nodemon --no-colors -e ts,json --ignore lib --ignore *.spec.ts -x ts-node server",
     "ava": "ava -v -s lib/**/*.spec.js",
     "test": "npm run rmlib && npm run tsc:test && npm run ava",
-    "tsc:test": "tsc --project test.tsconfig.json --outDir lib"
+    "tsc:test": "tsc --project tsconfig.spec.json --outDir lib"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "Xnet",
   "dependencies": {
     "koa": "2.0.0",
     "koa-router": "7.1.0",
-    "reflect-metadata": "0.1.9"
+    "reflect-metadata": "0.1.9",
+    "typeorm": "0.0.8"
   },
   "devDependencies": {
     "@types/koa": "2.0.37",
     "@types/koa-router": "7.0.21",
-    "@types/node": "7.0.0",
-    "ava": "0.17.0",
+    "@types/node": "7.0.5",
+    "ava": "0.18.1",
     "koa-handle-error": "0.0.4",
     "nodemon": "1.11.0",
     "rimraf": "2.5.4",
+    "sqlite3": "3.1.8",
     "ts-node": "2.0.0",
     "tslib": "1.5.0",
     "typescript": "2.1.5"
