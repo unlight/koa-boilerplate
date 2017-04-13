@@ -1,36 +1,41 @@
 {
   "name": "koa-boilerplate",
   "private": true,
-  "version": "1.0.0",
-  "description": "koa-boilerplate",
+  "version": "0.0.0",
+  "description": "",
   "scripts": {
     "start": "npm run server",
-    "rmlib": "rimraf lib",
-    "server": "ts-node server",
-    "server:inspect": "ts-node --inspect server",
-    "server:watch": "nodemon --no-colors -e ts,json --ignore lib --ignore *.spec.ts -x ts-node server",
-    "ava": "ava -v -s lib/**/*.spec.js",
-    "test": "npm run rmlib && npm run tsc:test && npm run ava",
-    "tsc:test": "tsc --project tsconfig.spec.json --outDir lib"
+    "server": "ts-node -F server",
+    "server:w": "nodemon --no-colors -e ts,json --ignore lib --ignore *.spec.ts -x \"ts-node -F server\"",
+    "server:ww": "npm run server:w -- --verbose",
+    "mocha": "ts-node -F node_modules/mocha/bin/_mocha",
+    "test": "npm run t && npm run tschk",
+    "t": "npm run mocha -- **/*.spec.ts",
+    "test:w": "npm run mocha -- --watch --watch-extensions ts **/*.spec.ts",
+    "tschk": "echo tsc --noEmit ... && tsc --noEmit",
+    "tschk:w": "npm run tschk -- --watch"
   },
   "license": "Xnet",
   "dependencies": {
-    "koa": "2.0.0",
-    "koa-router": "7.1.0",
-    "reflect-metadata": "0.1.9",
-    "typeorm": "0.0.8"
+    "koa": "2.2.0",
+    "koa-router": "7.1.1",
+    "lodash": "4.17.4",
+    "reflect-metadata": "0.1.10",
+    "koa-bodyparser": "4.2.0",
+    "typeorm": "0.0.11"
   },
   "devDependencies": {
-    "@types/koa": "2.0.37",
-    "@types/koa-router": "7.0.21",
-    "@types/node": "7.0.5",
-    "ava": "0.18.1",
-    "koa-handle-error": "0.0.4",
+    "@types/koa": "2.0.39",
+    "@types/koa-router": "7.0.22",
+    "@types/lodash": "4.14.62",
+    "@types/mocha": "2.2.40",
+    "@types/node": "7.0.12",
+    "mocha": "3.2.0",
     "nodemon": "1.11.0",
-    "rimraf": "2.5.4",
+    "rimraf": "2.6.1",
     "sqlite3": "3.1.8",
-    "ts-node": "2.0.0",
-    "tslib": "1.5.0",
-    "typescript": "2.1.5"
+    "ts-node": "3.0.2",
+    "tslib": "1.6.0",
+    "typescript": "2.3.0"
   }
 }

@@ -1,10 +1,14 @@
-import { test } from 'ava';
 import { pong } from './index';
+import assert = require('assert');
 
 const next = () => { };
 const k: any = {};
 
-test('pong', async t => {
-	await pong(k, next);
-	t.is(k.body.result, 'Pong1');
+describe('Ping', () => {
+
+	it('pong', async () => {
+		await pong(k, next);
+		assert.equal(k.body.result, 'Pong');
+	});
+
 });
