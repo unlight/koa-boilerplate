@@ -13,7 +13,8 @@
     "t": "npm run mocha -- **/*.spec.ts",
     "test:w": "npm run mocha -- --watch --watch-extensions ts **/*.spec.ts",
     "tschk": "echo tsc --noEmit ... && tsc --noEmit",
-    "tschk:w": "npm run tschk -- --watch"
+    "tschk:w": "npm run tschk -- --watch",
+    "up": "updtr --test-stdout --save-exact -R simple --test \"npm run test\""
   },
   "license": "Xnet",
   "dependencies": {

@@ -1,6 +1,6 @@
 import * as Router from 'koa-router';
 import { EntityManager } from 'typeorm';
-import { User } from '../orm/entities/user';
+import { User } from './user.entity';
 import pick = require('lodash/pick');
 
 export async function createUser(k: Router.IRouterContext, next: any) {

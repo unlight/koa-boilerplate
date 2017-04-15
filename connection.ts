@@ -1,7 +1,7 @@
 import { createConnection, Connection } from 'typeorm';
-import { User } from './entities/user';
 import * as Router from 'koa-router';
 import * as Koa from 'koa';
+import { User } from './user/user.entity';
 
 function getConnection(): Promise<Connection> {
 	return createConnection({

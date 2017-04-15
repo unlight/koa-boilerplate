@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import * as Koa from 'koa';
 import { routes as pingRoutes } from './ping/index';
-import { connection } from './orm/connection';
 import { routes as userRoutes } from './user/index';
-import { handleError } from './handle-error/handle-error';
+import { connection } from './connection';
+import { handleError } from './handle-error';
 const bodyParser = require('koa-bodyparser');
 
 
