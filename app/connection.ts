@@ -6,8 +6,8 @@ import { User } from './user/user.entity';
 function getConnection(): Promise<Connection> {
 	return createConnection({
 		driver: {
-			type: 'sqlite',
-			storage: 'db.sqlite',
+			type: process.env.APP_DRIVER_TYPE,
+			storage: process.env.APP_DRIVER_STORAGE
 		},
 		entities: [
 			User

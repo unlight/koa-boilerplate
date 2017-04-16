@@ -5,8 +5,8 @@
   "description": "",
   "scripts": {
     "start": "npm run server",
-    "server": "ts-node -F server",
-    "server:w": "nodemon --no-colors -e ts,json --ignore lib --ignore *.spec.ts -x \"ts-node -F server\"",
+    "server": "ts-node -F app/server",
+    "server:w": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
     "server:ww": "npm run server:w -- --verbose",
     "mocha": "ts-node -F node_modules/mocha/bin/_mocha",
     "test": "npm run t && npm run tschk",

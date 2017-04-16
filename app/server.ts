@@ -3,12 +3,11 @@ import * as Koa from 'koa';
 import { routes as pingRoutes } from './ping/index';
 import { routes as userRoutes } from './user/index';
 import { connection } from './connection';
-import { handleError } from './handle-error';
+import { errorHandler } from './error-handler';
 const bodyParser = require('koa-bodyparser');
 
-
 const server = new Koa()
-	.use(handleError())
+	.use(errorHandler())
 	.use(bodyParser())
 	.use(connection())
 	.use(pingRoutes)

@@ -1,4 +1,4 @@
-export function handleError() {
+export function errorHandler() {
 	return (k, next) => next()
 		.then(() => {
 			if (k.body === undefined && k.request.method !== 'OPTIONS') {

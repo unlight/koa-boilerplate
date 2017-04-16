@@ -1,6 +1,11 @@
 koa-boilerplate
 ===============
 
+SETUP
+---
+setx APP_DRIVER_TYPE "sqlite
+setx APP_DRIVER_STORAGE "db.sqlite"
+
 DEBUG
 ---
 ```
@@ -11,5 +16,7 @@ npm run tsc:test && inspect node_modules/ava/profile.js lib/ping/pong.spec.js
 
 TODO
 ---
+* object validator
+  - https://github.com/Kikobeats/osom
+  - https://github.com/hapijs/joi
 * eslint task
-* stchk task
