@@ -5,6 +5,7 @@
   "description": "",
   "scripts": {
     "start": "npm run server",
+    "server:inspect": "ts-node --inspect -F app/server",
     "server": "ts-node -F app/server",
     "server:w": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
     "server:ww": "npm run server:w -- --verbose",
@@ -31,6 +32,7 @@
     "@types/lodash": "4.14.62",
     "@types/mocha": "2.2.40",
     "@types/node": "7.0.12",
+    "koa-response-time": "2.0.0",
     "mocha": "3.2.0",
     "nodemon": "1.11.0",
     "rimraf": "2.6.1",
