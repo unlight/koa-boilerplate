@@ -2,21 +2,21 @@ import { createConnection, Connection } from 'typeorm';
 import * as Router from 'koa-router';
 import * as Koa from 'koa';
 import { User } from './user/user.entity';
+import { Book } from './book/book.entity';
 
-function getConnection(): Promise<Connection> {
+export function getConnection(options?): Promise<Connection> {
 	return createConnection({
 		driver: {
 			type: process.env.APP_DRIVER_TYPE,
 			storage: process.env.APP_DRIVER_STORAGE
 		},
 		entities: [
-			User
+			User, Book
 		],
 		autoSchemaSync: false,
-	}).then(connection => {
-		// Here you can start to work with your entities.
-		return connection.syncSchema()
-			.then(() => connection);
+        logging: {
+            logQueries: options && options.logQueries
+        }
 	});
 }
 
