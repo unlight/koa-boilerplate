@@ -3,3 +3,4 @@
 /lib/
 /debug.log
 /npm-debug.log
+/db.sqlite
