@@ -1,11 +1,11 @@
-import 'reflect-metadata';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable, ManyToMany } from 'typeorm';
 import { User } from '../user/user.entity';
 
 @Entity()
 export class Book {
 
-    constructor(fields: Partial<Book>);
+    // constructor(fields: Partial<Book>); // BUG: https://github.com/eslint/typescript-eslint-parser/issues/222
+
     constructor(data: any = null) {
         if (data && data.constructor === Object) {
             Object.assign(this, data);

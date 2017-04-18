@@ -10,4 +10,4 @@ async function run() {
 
 run()
     .then(() => console.log('Done.'))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err));

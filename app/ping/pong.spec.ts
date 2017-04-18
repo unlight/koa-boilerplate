@@ -6,9 +6,9 @@ const k: any = {};
 
 describe('Ping', () => {
 
-	it('pong', async () => {
-		await pong(k, next);
-		assert.equal(k.body.result, 'Pong');
-	});
+    it('pong', async () => {
+        await pong(k, next);
+        assert.equal(k.body.result, 'Pong');
+    });
 
 });

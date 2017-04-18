@@ -10,12 +10,13 @@
     "server:w": "nodemon --no-colors -e ts,json --watch app --ignore *.spec.ts -x \"ts-node -F app/server\"",
     "server:ww": "npm run server:w -- --verbose",
     "mocha": "ts-node -F node_modules/mocha/bin/_mocha",
-    "test": "npm run t && npm run tschk",
+    "test": "npm run t && npm run eslint && npm run tschk",
     "t": "npm run mocha -- **/*.spec.ts",
     "test:w": "npm run mocha -- --watch --watch-extensions ts **/*.spec.ts",
     "tschk": "echo tsc --noEmit ... && tsc --noEmit",
     "tschk:w": "npm run tschk -- --watch",
-    "up": "updtr --test-stdout --save-exact -R simple --test \"npm run test\""
+    "up": "updtr --test-stdout --save-exact -R simple --test \"npm run test\"",
+    "eslint": "eslint app/**"
   },
   "license": "Xnet",
   "dependencies": {
@@ -33,6 +34,9 @@
     "@types/lodash": "4.14.62",
     "@types/mocha": "2.2.40",
     "@types/node": "7.0.12",
+    "eslint": "3.19.0",
+    "eslint-plugin-typescript": "0.1.0",
+    "eslint-plugin-unicorn": "2.1.1",
     "joi": "10.4.1",
     "koa-response-time": "2.0.0",
     "mocha": "3.2.0",
@@ -41,6 +45,7 @@
     "sqlite3": "3.1.8",
     "ts-node": "3.0.2",
     "tslib": "1.6.0",
-    "typescript": "2.3.0"
+    "typescript": "2.2.2",
+    "typescript-eslint-parser": "2.1.0"
   }
 }

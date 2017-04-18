@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
 import { Book } from '../book/book.entity';
 

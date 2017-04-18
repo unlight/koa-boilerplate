@@ -4,8 +4,10 @@ koa-boilerplate
 SETUP
 ---
 ```
-setx APP_DRIVER_TYPE "sqlite
+setx APP_DRIVER_TYPE "sqlite"
 setx APP_DRIVER_STORAGE "db.sqlite"
+# seed script
+ts-node -F app/scripts/seed
 ```
 
 DEBUG
