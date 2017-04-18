@@ -19,6 +19,6 @@ app.use(userRoutes);
 
 if (module.parent === null) {
     const server = app.listen(3000, () => {
-        process.stdout.write(`Server started - http://localhost:3000\n`);
+        console.log(`Server started - http://localhost:3000`);
     });
 }
