@@ -15,6 +15,7 @@ DEBUG
 ```
 ts-node --inspect -F app/server
 devtool -r ts-node/register app/server
+inspect node_modules\ts-node\dist\_bin.js -F app\ping\pong.test.ts
 ```
 
 TODO

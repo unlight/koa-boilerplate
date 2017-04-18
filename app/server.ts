@@ -4,9 +4,11 @@ import { routes as pingRoutes } from './ping/index';
 import { routes as userRoutes } from './user/index';
 import { connection } from './connection';
 import { errorHandler } from './error-handler';
+
 const bodyParser = require('koa-bodyparser');
 
-const app = new Koa();
+export const app = new Koa();
+
 if (process.env.NODE_ENV !== 'production') {
     const koaResponseTime = require('koa-response-time');
     app.use(koaResponseTime());
