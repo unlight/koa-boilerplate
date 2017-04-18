@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, BeforeInsert } from 'typeorm';
 import { Book } from '../book/book.entity';
 
 @Entity()
@@ -20,4 +20,9 @@ export class User {
 
     @ManyToMany(type => Book, b => b.authors)
     books: Book[] = [];
+
+    @BeforeInsert()
+    doSomethingBeforeInsertion() {
+        // Can replace id here, return promise or void
+    }
 }

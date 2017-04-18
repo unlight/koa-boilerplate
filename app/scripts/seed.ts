@@ -1,8 +1,10 @@
+import 'reflect-metadata';
 import { createConnection, Connection } from 'typeorm';
 import { User } from '../user/user.entity';
 import { getConnection } from '../connection';
 import * as _ from 'lodash';
 import { Book } from '../book/book.entity';
+import { UserSubscriber } from '../user/user.events';
 
 const users = [
     new User({ name: 'Swearngen', email: 'tanagroid@shelfroom.net' }),

@@ -3,15 +3,18 @@ import * as Router from 'koa-router';
 import * as Koa from 'koa';
 import { User } from './user/user.entity';
 import { Book } from './book/book.entity';
+import { UserSubscriber } from './user/user.events';
 
 export function getConnection(options?): Promise<Connection> {
     return createConnection({
         driver: {
-            type: process.env.APP_DRIVER_TYPE,
-            storage: process.env.APP_DRIVER_STORAGE
+            type: process.env.TYPEORM_DRIVER_TYPE,
+            storage: process.env.TYPEORM_STORAGE
         },
         entities: [
             User, Book
+        ],
+        subscribers: [
         ],
         autoSchemaSync: false,
         logging: {

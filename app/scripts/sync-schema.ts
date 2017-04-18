@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { createConnection, Connection } from 'typeorm';
 import { User } from '../user/user.entity';
 import { getConnection } from '../connection';

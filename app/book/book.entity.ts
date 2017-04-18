@@ -15,14 +15,14 @@ export class Book {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 250 })
+    @Column({ length: 250, type: 'string' })
     title: string;
 
     @ManyToMany(type => User, u => u.books)
     @JoinTable()
     authors: User[] = [];
 
-    @Column({ nullable: true, comment: 'Place of publication' })
+    @Column({ nullable: true, comment: 'Place of publication' , type: 'string'})
     city: string;
 
     @Column({ nullable: true })
