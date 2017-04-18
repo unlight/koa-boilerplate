@@ -2,6 +2,7 @@ import * as Router from 'koa-router';
 import { EntityManager } from 'typeorm';
 import { User } from './user.entity';
 import { schema } from './user.schema';
+
 import pick = require('lodash/pick');
 import Joi = require('joi');
 

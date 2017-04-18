@@ -19,6 +19,7 @@ devtool -r ts-node/register app/server
 
 TODO
 ---
+* koa superagent
 * object validator
   - https://github.com/Kikobeats/osom
   - https://github.com/hapijs/joi

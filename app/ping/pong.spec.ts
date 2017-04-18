@@ -1,4 +1,5 @@
 import { pong } from './index';
+
 import assert = require('assert');
 
 const next = () => { };

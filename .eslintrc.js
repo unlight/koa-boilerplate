@@ -1,24 +1,31 @@
 module.exports = {
-    'env': {
-        'es6': true,
-        'node': true
+    "env": {
+        "es6": true,
+        "node": true
     },
-    'extends': 'eslint:recommended',
-    'parser': 'typescript-eslint-parser',
-    'parserOptions': {
-        'ecmaVersion': 2017,
-        'sourceType': 'module'
-    },
-    'plugins': [
-        'unicorn',
-        'typescript',
+    "extends": [
+        "eslint:recommended",
+        "plugin:unicorn/recommended",
     ],
-    'rules': {
-        'no-undef': 0,
-        'no-unused-vars': 0,
-        'no-console': 0,
-        'indent': ['warn', 4],
+    "parser": "typescript-eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "unicorn",
+        "typescript",
+        "import",
+    ],
+    "rules": {
+        "no-undef": 0,
+        "no-unused-vars": 0,
+        "no-console": 0,
+        "import/newline-after-import": 1,
+        "import/no-duplicates": 1,
+        "import/max-dependencies": [1, { "max": 10 }],
+        "indent": ["warn", 4],
         "quotes": [1, "single", { "allowTemplateLiterals": true }],
-        'semi': ['warn', 'always']
+        "semi": ["warn", "always"],
     }
 };
