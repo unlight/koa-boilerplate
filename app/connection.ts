@@ -26,7 +26,6 @@ export function getConnection(options?): Promise<Connection> {
 export function connection(): Koa.Middleware {
     return async function(k: Koa.Context, next) {
         let connection = await getConnection();
-        k['entityManager'] = connection.entityManager;
         await next();
         connection.close();
     };

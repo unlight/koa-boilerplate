@@ -1,5 +1,5 @@
 import * as Router from 'koa-router';
-import { EntityManager } from 'typeorm';
+import { EntityManager, getEntityManager } from 'typeorm';
 import { User } from './user.entity';
 import { schema } from './user.schema';
 
@@ -13,15 +13,14 @@ export async function createUser(k: Router.IRouterContext, next: any) {
         k.body = error;
         return;
     }
-    let entityManager: EntityManager = k['entityManager'];
+    let entityManager: EntityManager = getEntityManager();
     let user = new User();
     Object.assign(user, value);
     k.body = await entityManager.persist(user);
 }
 
 export async function browseUser(k: Router.IRouterContext, next: any) {
-    let entityManager: EntityManager = k['entityManager'];
-    let [result, count] = await entityManager.findAndCount(User);
+    let [result, count] = await getEntityManager().findAndCount(User);
     k.body = { result, count };
 }
 
